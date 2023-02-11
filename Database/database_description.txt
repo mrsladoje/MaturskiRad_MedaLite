@@ -1,0 +1,89 @@
+tblClinics            //Ustanova - moze imati samo jedan rekord. 
+	ClinicID
+	Name
+	Address
+	Phone
+	Web
+	Logo   //blob
+	Notes
+
+tblServices          //vrste pregleda
+	ServiceID
+	Name     //Npr: kardioloski pregled, operacija, pulmoloska kontrola
+	Duration
+	Notes	
+
+tblDiagnoses        
+    DiagnosesID
+	Name
+	Code
+	Description
+
+tblTherapies        
+      TherapyID
+      Name
+      GenericName
+      Code
+      Description
+
+tblDoctors            
+	DoctorID
+	Name
+	Title
+	Specialization
+	Address
+	Phone
+	Email
+	Username
+	Password
+	Notes
+
+tblPatients                
+	PatientID
+	Name
+	Surname
+	ParentName
+	Birthday
+	PlaceOfBirth
+	MbNo
+	Phone
+	Email
+	EvidentionCode   //Broj kartona 
+	Address
+	FamilyHistory
+	CurrentDiseases
+	Allergens
+	Notes
+	   
+tblReceptionDocuments            // mali DMS
+	ReceptionDocumentID
+	ReceptionID            
+	Document   //blob
+	DocDate
+	Description
+	  
+tblReceptionDiagnoses 
+    ReceptionDiagnosesID
+    ReceptionID
+    DiagnosesID	                
+
+tblReceptionTherapies           
+    ReceptionTherapyID
+    ReceptionID
+    TherapyID	  
+    Dose              
+
+tblReceptions              //Prijem
+	ReceptionID
+	PatientID
+	DoctorID
+    ServiceID
+	ReceptionTime
+	Anamnesis
+	Opinion
+	SuggestedTreatment
+	Findings
+	Conclusion
+	ExpectedControlDate
+	Notes 
+    IsLocked
