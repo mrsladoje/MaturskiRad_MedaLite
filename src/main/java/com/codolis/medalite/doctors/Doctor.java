@@ -42,7 +42,7 @@ public class Doctor {
      @Column(name="Email")
          private String doctorEmail;
      
-     @Column(name="Username", nullable=false)
+     @Column(name="Username", nullable=false, unique=true)
          private String doctorUsername;
      
      @Column(name="Password", nullable=false)
@@ -135,5 +135,9 @@ public class Doctor {
 		this.doctorNotes = doctorNotes;
 	}
      
-     
+    /*
+     korisnici za sada:
+       username: miroslava , password: mira123
+       username: srdjan, password: srdja123 
+     */ 
 }

@@ -68,6 +68,11 @@ public class PatientService {
 	    return patientRepository.findById(patId).get();
 	}
 	
+	//readPatientReceptions
+	public List<Reception> getPatientReceptions(Long patId) {
+		return receptionRepository.findByReceptionPatientPatientId(patId);
+	}
+	
 	//delete
 	public void deletePatient(Long patId) {
 		List<Reception> receptedPatients = receptionRepository.findByReceptionPatientPatientId(patId);

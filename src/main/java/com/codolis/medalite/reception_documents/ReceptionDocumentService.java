@@ -1,11 +1,11 @@
 package com.codolis.medalite.reception_documents;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Base64Utils;
 
 import com.codolis.medalite.receptions.ReceptionService;
 
@@ -51,7 +51,7 @@ public class ReceptionDocumentService {
 	    	
 	    	recDocVRet.receptionDocumentId = recDoc.getReceptionDocumentId();
 	    	recDocVRet.receptionDocumentReception = recDoc.getReceptionDocumentReception();
-	    	recDocVRet.receptionDocumentDocument = Base64Utils.encodeToString(recDoc.getReceptionDocumentDocument());
+	    	recDocVRet.receptionDocumentDocument = Base64.getEncoder().encodeToString(recDoc.getReceptionDocumentDocument());
 	    	recDocVRet.receptionDocumentDate = recDoc.getReceptionDocumentDate();
 	    	recDocVRet.receptionDocumentDescription = recDoc.getReceptionDocumentDescription();
 	    	
@@ -68,7 +68,7 @@ public class ReceptionDocumentService {
 		
 		recDocVRet.receptionDocumentId = recDoc.getReceptionDocumentId();
     	recDocVRet.receptionDocumentReception = recDoc.getReceptionDocumentReception();
-    	recDocVRet.receptionDocumentDocument = Base64Utils.encodeToString(recDoc.getReceptionDocumentDocument());
+    	recDocVRet.receptionDocumentDocument = Base64.getEncoder().encodeToString(recDoc.getReceptionDocumentDocument());
     	recDocVRet.receptionDocumentDate = recDoc.getReceptionDocumentDate();
     	recDocVRet.receptionDocumentDescription = recDoc.getReceptionDocumentDescription();
 		

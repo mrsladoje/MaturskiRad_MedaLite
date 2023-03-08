@@ -39,6 +39,8 @@ public class DoctorService {
 		if (doc.getDoctorUsername() != null) {
 			b &= !doc.getDoctorUsername().isEmpty();
 			b &= !doc.getDoctorUsername().isBlank();
+			
+			if (doctorRepository.findByDoctorUsername(doc.getDoctorUsername()) != null) b=false;
 		}
 		if (doc.getDoctorPassword() != null) {
 			b &= !doc.getDoctorPassword().isEmpty();
